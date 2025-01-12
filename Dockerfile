@@ -2,13 +2,15 @@
 FROM python:3.9
 
 # تعيين مجلد العمل
-WORKDIR /app
+WORKDIR /usr/src/app
 
 # نسخ ملفات المشروع إلى الحاوية
-COPY . .
+COPY  requirements.txt /usr/src/app
 
 # تثبيت المتطلبات
 RUN pip install -r requirements.txt
+
+COPY  . /usr/src/app
 
 # تحديد المنفذ
 EXPOSE 5000
