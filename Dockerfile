@@ -1,5 +1,5 @@
 # استخدم صورة بايثون
-FROM python:alpine
+FROM python:3.9
 
 # تعيين مجلد العمل
 WORKDIR /usr/src/app
@@ -16,4 +16,4 @@ COPY  . /usr/src/app
 EXPOSE 5000
 
 # تشغيل التطبيق
-CMD ["python3", "manage.py", "runserver", "0.0.0.0:5000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:5000"]
