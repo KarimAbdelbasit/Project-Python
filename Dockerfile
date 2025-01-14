@@ -1,19 +1,19 @@
-# استخدم صورة بايثون
+# Use Python image
 FROM python:3.9
 
-# تعيين مجلد العمل
+# Set the working directory
 WORKDIR /usr/src/app
 
-# نسخ ملفات المشروع إلى الحاوية
-COPY  requirements.txt /usr/src/app
+# Copy project files to the container
+COPY requirements.txt /usr/src/app
 
-# تثبيت المتطلبات
+# Install dependencies
 RUN pip install -r requirements.txt
 
-COPY  . /usr/src/app
+COPY . /usr/src/app
 
-# تحديد المنفذ
+# Specify the port
 EXPOSE 5000
 
-# تشغيل التطبيق
+# Run the application
 CMD ["python", "manage.py", "runserver", "0.0.0.0:5000"]
